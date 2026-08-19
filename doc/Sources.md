@@ -8,5 +8,5 @@ Each column in the KDC corresponds to a study --- if you use that column, please
 2. Lissauer (wherever the Rowe table comes from)
 3. Hsu et al (the occurrence rate study)
 4. Berger et al 2020 (where lots of the Rowe table comes from)
-5. 
+5. The hidden planet one Graham and Ragozzine in prep?
 
