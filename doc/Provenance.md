@@ -12,9 +12,9 @@ However, PhoDyMM cannot be run on every Kepler system. Several categories of sys
 1. Single planet systems (where only 1 transiting planet was detected) may display TTVs, but these are not interpretable without further data.
 2. Some multiplanet systems would not converge in the PhoDyMM simulations.
 
-Both of these types of systems are still included in the KDC; however, their posterior draws are obtained not from PhoDyMM simulation, but simply from drawing from flat priors (in the case of masses), from lightcurve-inferrable information (the photoeccentric effect for eccentricity and argument of periastron) or from preexisting catalog information (assuming Gaussianity for period and radius). 
+Both of these types of systems are still included in the KDC; however, their posterior draws are obtained not from PhoDyMM simulation, but simply from drawing from flat priors (in the case of masses), from lightcurve-inferrable information (the photoeccentric effect for eccentricity, argument of periastron, and inclination) or from preexisting catalog information (assuming Gaussianity for period and radius). Stellar information about these systems is also included, drawing from the Kepler stellar survey of Berger et al 2020.
 
-The result is that the KDC contains 1000 posterior draws representing the best-possible information obtainable from TTVs and lightcurve modeling for each Kepler planet. 
+The result is that the KDC contains 1000 posterior draws representing the best-possible information obtainable from TTVs and lightcurve modeling for each Kepler planetary system. 
 
 In addition, there are two classes of planets included in the KDC that are not canonical Kepler planets:
 
@@ -36,7 +36,15 @@ Headers ending with \_hsu were taken from Table  of Hsu et al. 2019, a planetary
 
 ## Columns
 
-*Format: description \[unit] (type)*
+*Format: description \[unit] (type) {source}*
+
+*[unit] denotes the unit the column is recorded in.*
+
+*(type) denotes the data type used to store the column. For most values, Float32 is well within the range of precision.*
+
+*{source} denotes which study should be cited upon using the column. See sources.md in this directory for a mapping of source number to citation.*
+
+
 
 #### `kmdc\_index`
 
