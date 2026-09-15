@@ -34,6 +34,9 @@ Headers ending with \_rowe were taken from Table of Lissauer et al. 2024, a syst
 
 Headers ending with \_hsu were taken from Table  of Hsu et al. 2019, a planetary occurrence-rate study.
 
+What study should people cite for KDC citations?  Jones et al ? -- describes KMDC, but not thinning algorithm or any other post processing 
+\Blodgett & Ragozzine (Kepler globals?) -- describes process for singles/unconverged multies, thinning algorithm, cuts we made etc.
+
 ## Columns
 
 *Format: description \[unit] (type) {source}*
@@ -42,7 +45,7 @@ Headers ending with \_hsu were taken from Table  of Hsu et al. 2019, a planetary
 
 *(type) denotes the data type used to store the column. For most values, Float32 is well within the range of precision.*
 
-*{source} denotes which study should be cited upon using the column. See sources.md in this directory for a mapping of source number to citation.*
+*{source} denotes which study/studies should be cited upon using the column. See sources.md in this directory for a mapping of source number to citation.*
 
 
 
