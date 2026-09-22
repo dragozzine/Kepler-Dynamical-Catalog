@@ -18,12 +18,12 @@ One such photodynamical tool, [PhoDyMM](https://github.com/dragozzine/PhoDyMM), 
 
 Because of the size of the KDC, this repository stores it as a series of compressed ```.parquet``` files located in ```/data```. To turn these files into a more palatable format, i.e., ```.csv``` or ```.h5```, run ```python src/quickstart.py``` in your terminal. 
 
-A tutorial notebook (```tutorial filename```) also exists---for those new to the Kepler Dynamics Catalog, this notebook is a great place to start
+A tutorial notebook (```tutorial filename```) also exists---for those new to the Kepler Dynamics Catalog, this notebook is a great place to start.
 
 
 ## Further Details
 
-For an individual description of each data column in the KDC, see ```doc/Provenance.md```. 
+For an individual description of each data column in the KDC, see ```doc/Provenance.md```. A summary table of the KDC is located at ```doc/Provenance_table.xml```
 
 For a detailed description of how PhoDyMM generated the posteriors for multiplanet systems see Jones, Ragozzine, & Fabrykcy in preparation. 
 

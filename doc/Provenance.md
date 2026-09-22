@@ -18,8 +18,12 @@ The result is that the KDC contains 1000 posterior draws representing the best-p
 
 In addition, there are two classes of planets included in the KDC that are not canonical Kepler planets:
 
-1. Many "single transit" events were observed by the Kepler mission. Without a second transit, the periods of these probable exoplanets remain poorly constrained, but their presence was included in PhoDyMM simulations and is thus included in the KDC.
+1. Many "single transit" events were observed by the Kepler mission. Without a second transit, the periods of these probable exoplanets remain poorly constrained, but their presence was included in Lissauer et al. 2024, PhoDyMM simulations, and is thus included in the KDC.
 2. In some multiplanet systems, the addition of an extra, non-transiting planet helps to explain the observed TTVs. PhoDyMM simulations included these "hidden" planets where appropriate.
+
+The following chart sums up this (rather convoluted) situation:
+
+![Relationship of KDC to ](../plots/KDCVenn.png)
 
 
 
