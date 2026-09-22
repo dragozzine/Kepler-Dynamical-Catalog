@@ -1,6 +1,6 @@
 # Data Provenance of the Kepler Dynamical Catalog
 
-This file indicates how each data column of the Kepler Dynamical Catalog was calculated. Here, each column is also given a source id number; see Sources.md to see which sources should be cited if you use a particular column.
+This file indicates how each data column of the Kepler Dynamical Catalog was calculated; it also includes its units, datatype, and study from which it came (and which should be cited). If you are using *any* column of the KDC, please be sure to **cite both Jones et al. 2026 and Blodgett & Ragozzine in prep**. Refer to Sources.md to see which additional sources should be cited if you use a particular column.
 
 
 ## Overview
@@ -34,8 +34,6 @@ Headers ending with \_rowe were taken from Table of Lissauer et al. 2024, a syst
 
 Headers ending with \_hsu were taken from Table  of Hsu et al. 2019, a planetary occurrence-rate study.
 
-What study should people cite for KDC citations?  Jones et al ? -- describes KMDC, but not thinning algorithm or any other post processing 
-\Blodgett & Ragozzine (Kepler globals?) -- describes process for singles/unconverged multies, thinning algorithm, cuts we made etc.
 
 ## Columns
 
@@ -65,11 +63,11 @@ Stellar radius \[solar radii] (float32)
 
 #### `c\_1`
 
-Limb darkening coefficient 1 \[unitless] (float32)
+PhoDyMM limb darkening coefficient 1 \[unitless] (float32)
 
 #### `c\_2`
 
-Limb darkening coefficient 2 \[unitless] (float32)
+PhoDyMM limb darkening coefficient 2 \[unitless] (float32)
 
 #### `R\_p/R\_s`
 
@@ -129,7 +127,7 @@ Argument of periastron \[degrees] (float32)
 
 #### `true\_anomaly`
 
-(incorrect) true anomaly at observation \[degrees] (float32)
+True anomaly at observation. This column only includes the 1st-order terms, and is thus inaccurate \[degrees] (float32)
 
 #### `eccentric\_anomaly`
 
@@ -145,7 +143,7 @@ Mean longitude \[degrees] (float32)
 
 #### `omega\_rad`
 
-Argument of periastron \[radians] (float32)
+Argument of periastron in radians \[radians] (float32)
 
 #### `falsetrueanomaly`
 
@@ -257,31 +255,31 @@ Periastron distance (duplicate of peri\_AU) \[AU] (float32)
 
 #### `Tp`
 
-Epoch...something (DR needs to confirm what this is) \[days] (float32)
+Epoch...reference...something (DR needs to confirm what this is) \[days] (float32)
 
 #### `x`
 
-x-position in Jacobean coordinates in PhoDyMM integration \[AU] (float32)
+x-position in Jacobian coordinates in PhoDyMM integration \[AU] (float32)
 
 #### `y`
 
-y-position in Jacobean coordinates in PhoDyMM integration \[AU] (float32)
+y-position in Jacobian coordinates in PhoDyMM integration \[AU] (float32)
 
 #### `z`
 
-z-position in Jacobean coordinates in PhoDyMM integration \[AU] (float32)
+z-position in Jacobian coordinates in PhoDyMM integration \[AU] (float32)
 
 #### `vx`
 
-x-velocity in Jacobean coordinates in PhoDyMM integration \[AU/day] (float32)
+x-velocity in Jacobian coordinates in PhoDyMM integration \[AU/day] (float32)
 
 #### `vy`
 
-y-velocity in Jacobean coordinates in PhoDyMM integration \[AU/day] (float32)
+y-velocity in Jacobian coordinates in PhoDyMM integration \[AU/day] (float32)
 
 #### `vz`
 
-z-velocity in Jacobean coordinates in PhoDyMM integration \[AU/day] (float32)
+z-velocity in Jacobian coordinates in PhoDyMM integration \[AU/day] (float32)
 
 #### `Period\_days`
 
@@ -433,7 +431,7 @@ Dilution factor in flux \[unitless] (float32)
 
 #### `chisq`
 
-Chi-squared value of model fit \[unitless] (float32)
+Chi-squared value of PhoDyMM model fit \[unitless] (float32)
 
 #### `Chain#`
 
@@ -441,11 +439,11 @@ MCMC chain number \[unitless] (int)
 
 #### `chisq\_rank`
 
-Chi-squared rank within chain \[unitless] (int)
+Chi-squared rank within chain. The most likely chain was assigned the lowest rank, 1, and numbers were then assigned to 1000. \[unitless] (int)
 
 #### `step\_number`
 
-MCMC step number \[unitless] (int)
+MCMC algorithm step number \[unitless] (int)
 
 #### `phodymm\_index`
 
@@ -453,7 +451,7 @@ Index that indicates the row of the PhoDyMM dqa file this draw was pulled from \
 
 #### `planet`
 
-PhoDyMM planet number; lower number indicates shorter period \[unitless] (float32)
+PhoDyMM planet number; a lower number indicates shorter period. This column should not be confused with KOI number. \[unitless] (float32)
 
 #### `is\_hidden\_planet`
 
@@ -461,7 +459,7 @@ binary flag to indicate if this is a hidden planet added in PhoDyMM integrations
 
 #### `is\_monotransiting`
 
-binary flag to indicate if this is a planet with a single transit \[unitless] (bool)
+binary flag to indicate if this is a planet with only a single transit \[unitless] (bool)
 
 #### `KIC`
 
@@ -802,4 +800,52 @@ Berger et al. 2020 metallicity \[Fe/H] (float32)
 #### `e\_BZ\*\_rowe`
 
 Uncertainty in BZ\*\_rowe \[Fe/H] (float32)
+
+#### `tm_designation`       
+
+
+"ra",                    
+"dec",                   
+"kepmag",                
+"teff",                    
+"teff_prov",               
+"logg",                    
+"logg_prov",               
+"feh",                     
+"feh_prov",                
+"radius",                  
+"mass",               
+"dens",               
+"prov_sec",           
+"dist",               
+"av",                 
+"limbdark_coeff1",    
+"limbdark_coeff2",   
+"limbdark_coeff3",    
+"limbdark_coeff4",    
+"nconfp",                  
+"nkoi",                    
+"ntce",                    
+"st_quarters",        
+"st_vet_date",             
+"dutycycle",          
+"dutycycle_post",     
+"dataspan",           
+"dataspan_post",      
+"rrmscdpp01p5",       
+"rrmscdpp02p0",       
+"rrmscdpp02p5",       
+"rrmscdpp03p0",       
+"rrmscdpp03p5",       
+"rrmscdpp04p5",       
+"rrmscdpp05p0",       
+"rrmscdpp06p0",       
+"rrmscdpp07p5",       
+"rrmscdpp09p0",       
+"rrmscdpp10p5",       
+"rrmscdpp12p0",       
+"rrmscdpp12p5",       
+"rrmscdpp15p0",      
+"cdppslplong",        
+"cdppslpshrt",
 
