@@ -1,6 +1,6 @@
 # Data Provenance of the Kepler Dynamical Catalog
 
-This file indicates how each data column of the Kepler Dynamical Catalog was calculated; it also includes its units, datatype, and study from which it came (and which should be cited). If you are using *any* column of the KDC, please be sure to **cite both Jones et al. 2026 and Blodgett & Ragozzine in prep**. Refer to Sources.md to see which additional sources should be cited if you use a particular column.
+This file indicates how each data column of the Kepler Dynamical Catalog was calculated; it also includes its units, datatype, and study from which it came (and which should be cited). If you are using *any* column of the KDC, please be sure to **cite both Jones et al. 2026 and Blodgett & Ragozzine in prep**. Refer to Sources.md to see which additional sources should be cited per use of a particular column.
 
 
 ## Overview
@@ -25,7 +25,7 @@ The following chart sums up this (rather convoluted) situation:
 
 ![Relationship of KDC to ](../plots/KDCVenn.png)
 
-
+While Lissauer et al. 2024 (the yellow box) contains most of the same planets, it did not use TTVs to model its systems; the KDC leveraged this process where possible (shown by the blue box). 
 
 
 ## Notes
