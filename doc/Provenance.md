@@ -5,7 +5,7 @@ This file indicates how each data column of the Kepler Dynamical Catalog was cal
 
 ## Overview
 
-The Kepler Dynamical Catalog (KDC) contains the results of a homogeneous-as-possible model fit to the entire Kepler catalog. The model used to generate the KDC was PhoDyMM, a photodynamical solver that finds all of a system's transiting exoplanets' masses, in addition to their orbital parameters. In essence, PhoDyMM uses the transit timing variations (TTVs) of multi-planet systems to solve for their masses. Rather than include reductive summary statistics of the PhoDyMM model runs, the KDC includes the posteriors of these runs, downsampled to 1000 posterior draws. 
+The Kepler Dynamical Catalog (KDC) contains the results of a homogeneous-as-possible model fit to the entire Kepler catalog. The model used to generate the KDC was PhoDyMM, a photodynamical solver that finds all of a system's transiting exoplanets' masses, in addition to their orbital parameters. In essence, PhoDyMM uses the transit timing variations (TTVs) of multi-planet systems to solve for their masses. Rather than include reductive summary statistics of the PhoDyMM model runs, the KDC includes the posteriors of these runs, downsampled to 1000 posterior draws. The full PhoDyMM run outputs can be found at [https://doi.org/10.5281/zenodo.15997830].
 
 However, PhoDyMM cannot be run on every Kepler system. Several categories of systems do not allow for TTV modeling:
 
@@ -57,11 +57,11 @@ Unique row index in KMDC file \[\[KOI]\[chisqrank]] (int)
 
 For singles, we use the mass rank instead, because no PhoDyMM chisq value exists for these systems---as a TTV solver, PhoDyMM can only be intelligibly run on multiplanet systems. chisqrank is 0-padded to 4 digits. Hidden planets are given a KOI of 0 for the planet part of the KOI number.
 
-#### `M\_s`
+#### `M_s`
 
 Stellar mass \[solar masses] (float32)
 
-#### `R\_s`
+#### `R_s`
 
 Stellar radius \[solar radii] (float32)
 
