@@ -25,14 +25,14 @@ The following chart sums up this (rather convoluted) situation:
 
 ![Relationship of KDC to ](../plots/KDCVenn.png)
 
-While Lissauer et al. 2024 (the yellow box) contains most of the same planets, it did not use TTVs to model its systems; the KDC leveraged this process where possible (shown by the blue box). 
+While Lissauer et al. 2024 (the yellow box) contains most of the same planets, it did not use TTVs to model its systems; the KDC leveraged this process where possible (in the systems analyzed by Jones et al. 2026, blue box). 
 
 
 ## Notes
 
 For a multiplanet system, each row corresponds with 1 posterior draw from a PhoDyMM photodynamical system solution.
 
-For a single planet system, each row corresponds with 1 draw from assumed Gaussian distributions given in DR25.
+For a single planet system, each row corresponds with 1 draw from assumed Gaussian distributions given in Lissauer et al 2024.
 
 Headers ending with \_rowe were taken from Table of Lissauer et al. 2024, a system-level look at Kepler DR25.
 
@@ -55,7 +55,7 @@ Headers ending with \_hsu were taken from Table  of Hsu et al. 2019, a planetary
 
 Unique row index in KMDC file \[\[KOI]\[chisqrank]] (int) 
 
-For singles, we use the mass rank instead, because no PhoDyMM chisq value exists for these systems---as a TTV solver, PhoDyMM can only be intelligibly run on multiplanet systems. chisqrank is 0-padded to 4 digits. Hidden planets are given a KOI of 0 for the planet part of the KOI number.
+For singles, we use the mass rank instead, because no PhoDyMM chisq value exists for these systems---as a TTV solver, PhoDyMM can only be intelligibly run on multiplanet systems. chisqrank is 0-padded to 3 digits. Hidden planets are given a KOI of 0 for the planet part of the KOI number.
 
 #### `M_s`
 
@@ -807,49 +807,63 @@ Uncertainty in BZ\*\_rowe \[Fe/H] (float32)
 
 #### `tm_designation`       
 
-
-"ra",                    
-"dec",                   
-"kepmag",                
-"teff",                    
-"teff_prov",               
-"logg",                    
-"logg_prov",               
-"feh",                     
-"feh_prov",                
-"radius",                  
-"mass",               
-"dens",               
-"prov_sec",           
-"dist",               
-"av",                 
-"limbdark_coeff1",    
-"limbdark_coeff2",   
-"limbdark_coeff3",    
-"limbdark_coeff4",    
-"nconfp",                  
-"nkoi",                    
-"ntce",                    
-"st_quarters",        
-"st_vet_date",             
-"dutycycle",          
-"dutycycle_post",     
-"dataspan",           
-"dataspan_post",      
-"rrmscdpp01p5",       
-"rrmscdpp02p0",       
-"rrmscdpp02p5",       
-"rrmscdpp03p0",       
-"rrmscdpp03p5",       
-"rrmscdpp04p5",       
-"rrmscdpp05p0",       
-"rrmscdpp06p0",       
-"rrmscdpp07p5",       
-"rrmscdpp09p0",       
-"rrmscdpp10p5",       
-"rrmscdpp12p0",       
-"rrmscdpp12p5",       
-"rrmscdpp15p0",      
-"cdppslplong",        
-"cdppslpshrt",
-
+ra
+dec
+kepmag
+limbdark_coeff1
+limbdark_coeff2
+limbdark_coeff3
+limbdark_coeff4
+nconfp
+nkoi
+ntce
+st_quarters
+dutycycle
+dutycycle_post
+dataspan
+dataspan_post
+rrmscdpp01p5
+rrmscdpp02p0
+rrmscdpp02p5
+rrmscdpp03p0
+rrmscdpp03p5
+rrmscdpp04p5
+rrmscdpp05p0
+rrmscdpp06p0
+rrmscdpp07p5
+rrmscdpp09p0
+rrmscdpp10p5
+rrmscdpp12p0
+rrmscdpp12p5
+rrmscdpp15p0
+mesthres01p5
+mesthres02p0
+mesthres02p5
+mesthres03p0
+mesthres03p5
+mesthres04p5
+mesthres05p0
+mesthres06p0
+mesthres07p5
+mesthres09p0
+mesthres10p5
+mesthres12p0
+mesthres12p5
+mesthres15p0
+timeout01p5
+timeout02p0
+timeout02p5
+timeout03p0
+timeout03p5
+timeout04p5
+timeout05p0
+timeout06p0
+timeout07p5
+timeout09p0
+timeout10p5
+timeout12p0
+timeout12p5
+timeout15p0
+timeoutsumry
+cdppslplong
+cdppslpshrt
