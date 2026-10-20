@@ -1,4 +1,4 @@
-![kdc logo](/plots/kdc_horizontal_logo_mono.png)
+![kdc logo](/plots/kdc_logo_horizontal_mono.png)
 
 ---
 
