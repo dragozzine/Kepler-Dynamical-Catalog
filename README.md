@@ -1,4 +1,4 @@
-# Kepler Dynamical Catalog
+![kdc logo](/plots/kdc_horizontal_logo_mono.png)
 
 ---
 
@@ -25,9 +25,9 @@ A tutorial notebook (```tutorial filename```) also exists---for those new to the
 
 For an individual description of each data column in the KDC, see ```doc/Provenance.md```. A summary table of the KDC is located at ```doc/Provenance_table.xml```
 
-For a detailed description of how PhoDyMM generated the posteriors for multiplanet systems see Jones, Ragozzine, & Fabrykcy in preparation. 
+For a detailed description of how PhoDyMM generated the posteriors for multiplanet systems see Jones, Ragozzine, & Fabrykcy in preparation. A short description of PhoDyMM is also available in ```doc/About_PhoDyMM.md```. 
 
-For a detailed description of the post-processing done to multiplanet systems, as well as how the single-planet posteriors were generated, see Blodgett & Ragozzine in preparation.
+For a description of the post-processing done to multiplanet systems, as well as how the single-planet posteriors were generated, see Blodgett & Ragozzine in preparation.
 
 
 ## Citation
