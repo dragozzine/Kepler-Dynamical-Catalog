@@ -14,6 +14,19 @@ for when you know the selection is small enough to want back as one
 in-memory DataFrame (e.g. the "minimal"/"phodymm_base" preset, or a
 notebook session).
 
+By default, both write_csv() and load_dataframe() sort their output by
+kdc_index: parquet_draws's own row order just reflects whatever order
+kg_subsampler.py/create_nckmdc.py/create_ksdc.py happened to write each
+catalog's rows in (not sorted by anything), so without this the exported
+CSV's row order is essentially arbitrary. write_csv() does this by
+buffering the matched/merged rows for the requested catalogs/columns in
+memory before writing them out in one pass, rather than streaming part-
+by-part -- only that selection, not the full (much larger) parquet_draws
+dataset, so it's usually fine, but pass sort_by_kdc_index=False (or
+--no-sort on the command line) to go back to the original unsorted,
+one-part-at-a-time streaming write if memory is tight or order doesn't
+matter.
+
 Quick examples:
     # library use
     from kdc_to_csv import write_csv
@@ -28,6 +41,7 @@ Quick examples:
         --catalogs KMDC,KSDC -o csv_exports/base_only.csv
     python3 kdc_to_csv.py --list-groups
     python3 kdc_to_csv.py --preset full -o csv_exports/full.csv --dry-run
+    python3 kdc_to_csv.py --preset standard -o csv_exports/unsorted.csv --no-sort
 
 See quickstart.py for a zero-argument default run.
 """
@@ -187,10 +201,10 @@ def _merge_tier(chunk, tier_df, on):
 def write_csv(output_path, draws_columns, catalogs=None,
               stellar_columns=None, planet_columns=None,
               draws_dir=DRAWS_DIR, stellar_dir=STELLAR_DIR, planet_dir=PLANETS_DIR,
-              max_estimated_gb=20, force=False, verbose=True):
+              max_estimated_gb=20, force=False, verbose=True,
+              sort_by_kdc_index=True):
     """Stream parquet_draws (+ optionally parquet_stellar/parquet_planets,
-    left-merged in per chunk) to a CSV at `output_path`, one manifest part
-    at a time.
+    left-merged in per chunk) to a CSV at `output_path`.
 
     draws_columns: column names from kdc_csv_presets.DRAWS_GROUPS (or any
         real draws column name). stellar_columns/planet_columns: same idea
@@ -201,6 +215,12 @@ def write_csv(output_path, draws_columns, catalogs=None,
         total row count; if the estimate exceeds this, write_csv raises
         instead of silently producing a huge file -- pass force=True (or
         raise the limit) once you've seen the estimate and still want it.
+    sort_by_kdc_index: True (the default) buffers every matched/merged
+        chunk in memory and sorts the whole export by kdc_index before
+        writing it out in one pass -- see the module docstring for why.
+        Pass False to go back to the original one-part-at-a-time
+        streaming write (parquet_draws's own, largely arbitrary, row
+        order) instead.
 
     Returns (output_path, rows_written).
     """
@@ -233,6 +253,8 @@ def write_csv(output_path, draws_columns, catalogs=None,
 
     rows_written = 0
     wrote_header = False
+    did_size_check = False
+    pending_chunks = [] if sort_by_kdc_index else None
     for chunk in iter_draws_chunks(needed_draws_cols, catalogs=catalogs, folder=draws_dir):
         if stellar_df is not None:
             chunk = _merge_tier(chunk, stellar_df, "KIC")
@@ -240,7 +262,7 @@ def write_csv(output_path, draws_columns, catalogs=None,
             chunk = _merge_tier(chunk, planet_df, "KOI")
         chunk = chunk[out_cols]
 
-        if not wrote_header:
+        if not did_size_check:
             bytes_per_row = _estimate_csv_bytes_per_row(chunk)
             est_gb = bytes_per_row * total_rows / 1024**3
             if verbose:
@@ -251,17 +273,45 @@ def write_csv(output_path, draws_columns, catalogs=None,
                     f"estimated CSV size ~{est_gb:.1f} GB exceeds max_estimated_gb="
                     f"{max_estimated_gb}. Narrow the column/catalog selection, raise "
                     f"max_estimated_gb, or pass force=True to write it anyway.")
-            chunk.to_csv(output_path, index=False, mode="w", header=True)
-            wrote_header = True
-        else:
-            chunk.to_csv(output_path, index=False, mode="a", header=False)
-        rows_written += len(chunk)
-        if verbose:
-            print(f"  {rows_written:,}/{total_rows:,} rows written", end="\r")
+            did_size_check = True
+            if sort_by_kdc_index and verbose:
+                print(f"  sort_by_kdc_index=True -- buffering the matched rows in "
+                      f"memory to sort by kdc_index before writing (pass "
+                      f"sort_by_kdc_index=False / --no-sort to stream an unsorted "
+                      f"write instead)")
 
-    if not wrote_header:
-        # every part got filtered away (e.g. an empty catalogs selection) --
-        # still produce a valid, header-only CSV rather than nothing at all
+        if sort_by_kdc_index:
+            pending_chunks.append(chunk)
+            rows_written += len(chunk)
+            if verbose:
+                print(f"  buffered {rows_written:,}/{total_rows:,} rows", end="\r")
+        else:
+            if not wrote_header:
+                chunk.to_csv(output_path, index=False, mode="w", header=True)
+                wrote_header = True
+            else:
+                chunk.to_csv(output_path, index=False, mode="a", header=False)
+            rows_written += len(chunk)
+            if verbose:
+                print(f"  {rows_written:,}/{total_rows:,} rows written", end="\r")
+
+    if sort_by_kdc_index:
+        import pandas as pd
+        if pending_chunks:
+            full = pd.concat(pending_chunks, ignore_index=True)
+            # mergesort is stable: kdc_index alone isn't guaranteed unique
+            # across catalogs ((kdc_index, catalog) is the real key -- see
+            # _ordered_output_columns' comment), so ties keep their
+            # original, already-catalog-grouped relative order instead of
+            # shuffling arbitrarily.
+            full = full.sort_values("kdc_index", kind="mergesort").reset_index(drop=True)
+            full.to_csv(output_path, index=False, mode="w", header=True)
+        else:
+            # every part got filtered away (e.g. an empty catalogs selection) --
+            # still produce a valid, header-only CSV rather than nothing at all
+            pd.DataFrame(columns=out_cols).to_csv(output_path, index=False)
+    elif not wrote_header:
+        # same empty-selection case, for the unsorted streaming path
         import pandas as pd
         pd.DataFrame(columns=out_cols).to_csv(output_path, index=False)
 
@@ -273,11 +323,17 @@ def write_csv(output_path, draws_columns, catalogs=None,
 
 
 def load_dataframe(draws_columns, catalogs=None, stellar_columns=None, planet_columns=None,
-                    draws_dir=DRAWS_DIR, stellar_dir=STELLAR_DIR, planet_dir=PLANETS_DIR):
+                    draws_dir=DRAWS_DIR, stellar_dir=STELLAR_DIR, planet_dir=PLANETS_DIR,
+                    sort_by_kdc_index=True):
     """Convenience wrapper returning one in-memory DataFrame instead of
     writing a CSV -- use for a selection you know is small (a handful of
     columns, or a catalogs= filter down to one of the smaller catalogs).
-    For anything close to the full dataset, prefer write_csv()."""
+    For anything close to the full dataset, prefer write_csv().
+
+    sort_by_kdc_index: True (the default) sorts the returned DataFrame by
+    kdc_index -- see write_csv()'s docstring for why parquet_draws's own
+    row order isn't meaningful on its own. Pass False to get it back in
+    whatever order iter_draws_chunks() produced it."""
     import pandas as pd
 
     stellar_df = _resolve_tier_table(stellar_columns, read_stellar_table, "KIC",
@@ -298,7 +354,10 @@ def load_dataframe(draws_columns, catalogs=None, stellar_columns=None, planet_co
         df = _merge_tier(df, stellar_df, "KIC")
     if planet_df is not None:
         df = _merge_tier(df, planet_df, "KOI")
-    return df[out_cols]
+    df = df[out_cols]
+    if sort_by_kdc_index and len(df) > 0:
+        df = df.sort_values("kdc_index", kind="mergesort").reset_index(drop=True)
+    return df
 
 
 # ----------------------------------------------------------------------
@@ -343,6 +402,11 @@ def _build_argparser():
     ap.add_argument("--planets-dir", type=Path, default=PLANETS_DIR)
     ap.add_argument("--max-estimated-gb", type=float, default=20.0,
                      help="abort before writing if the extrapolated CSV size exceeds this")
+    ap.add_argument("--no-sort", dest="sort_by_kdc_index", action="store_false",
+                     help="skip sorting by kdc_index -- stream-write parquet_draws's "
+                          "own (largely arbitrary) row order instead, one manifest "
+                          "part at a time, without buffering the whole export in "
+                          "memory first (sorted is the default)")
     ap.add_argument("--force", action="store_true",
                      help="write even if the size estimate exceeds --max-estimated-gb")
     ap.add_argument("--dry-run", action="store_true",
@@ -408,7 +472,8 @@ def main(argv=None):
     write_csv(args.output, draws_cols, catalogs=args.catalogs,
               stellar_columns=stellar_cols, planet_columns=planet_cols,
               draws_dir=args.draws_dir, stellar_dir=args.stellar_dir, planet_dir=args.planets_dir,
-              max_estimated_gb=args.max_estimated_gb, force=args.force)
+              max_estimated_gb=args.max_estimated_gb, force=args.force,
+              sort_by_kdc_index=args.sort_by_kdc_index)
     return 0
 
 

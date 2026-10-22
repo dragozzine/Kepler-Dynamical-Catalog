@@ -1,4 +1,4 @@
-![kdc logo](/plots/kdc_logo_horizontal_mono.png)
+![kdc logo](/plots/kdc_logo_horizontal_loop.gif)
 
 ---
 
@@ -16,7 +16,7 @@ One such photodynamical tool, [PhoDyMM](https://github.com/dragozzine/PhoDyMM), 
 
 ## Getting Started
 
-Because of the size of the KDC, this repository stores it as a series of compressed ```.parquet``` files located in ```/data```. To turn these files into a more palatable format, i.e., ```.csv``` or ```.h5```, run ```python src/quickstart.py``` in your terminal.
+Because of the size of the KDC, this repository stores it as a series of compressed ```.parquet``` files located in ```/data```. To turn these files into a more palatable format, i.e., ```.csv```, run ```python src/quickstart.py``` in your terminal.
 
 A tutorial notebook (```tutorial filename```) also exists---for those new to the Kepler Dynamics Catalog, this notebook is a great place to start.
 
