@@ -1,90 +1,86 @@
 {
  "source_csvs": [
   "KMDC.csv",
+  "KMDC_leftovers.csv",
   "NCKMDC.csv",
   "KSDC.csv"
  ],
- "n_rows": 11274000,
+ "n_rows": 9709000,
  "key_columns": [
-  "kmdc_index",
+  "kdc_index",
   "catalog"
  ],
  "catalogs": {
   "KMDC": {
    "row_start": 0,
-   "row_stop": 1691000
+   "row_stop": 1712000
   },
   "NCKMDC": {
-   "row_start": 1691000,
-   "row_stop": 4009000
+   "row_start": 1712000,
+   "row_stop": 2343000
   },
   "KSDC": {
-   "row_start": 4009000,
-   "row_stop": 11274000
+   "row_start": 2343000,
+   "row_stop": 9709000
   }
  },
  "parts": [
   {
    "part": 0,
    "row_start": 0,
-   "row_stop": 1052474
+   "row_stop": 1052971
   },
   {
    "part": 1,
-   "row_start": 1052474,
-   "row_stop": 2104948
+   "row_start": 1052971,
+   "row_stop": 2105942
   },
   {
    "part": 2,
-   "row_start": 2104948,
-   "row_stop": 3157422
+   "row_start": 2105942,
+   "row_stop": 3158913
   },
   {
    "part": 3,
-   "row_start": 3157422,
-   "row_stop": 4209896
+   "row_start": 3158913,
+   "row_stop": 4211884
   },
   {
    "part": 4,
-   "row_start": 4209896,
-   "row_stop": 5262370
+   "row_start": 4211884,
+   "row_stop": 5264855
   },
   {
    "part": 5,
-   "row_start": 5262370,
-   "row_stop": 6314844
+   "row_start": 5264855,
+   "row_stop": 6317826
   },
   {
    "part": 6,
-   "row_start": 6314844,
-   "row_stop": 7367318
+   "row_start": 6317826,
+   "row_stop": 7370797
   },
   {
    "part": 7,
-   "row_start": 7367318,
-   "row_stop": 8419792
+   "row_start": 7370797,
+   "row_stop": 8423768
   },
   {
    "part": 8,
-   "row_start": 8419792,
-   "row_stop": 9472266
+   "row_start": 8423768,
+   "row_stop": 9476739
   },
   {
    "part": 9,
-   "row_start": 9472266,
-   "row_stop": 10524740
-  },
-  {
-   "part": 10,
-   "row_start": 10524740,
-   "row_stop": 11274000
+   "row_start": 9476739,
+   "row_stop": 9709000
   }
  ],
  "groups": [
   {
    "group": 0,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "M_s",
     "R_s",
@@ -107,14 +103,13 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   {
    "group": 1,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "M_p/M_s",
     "M_pJ",
@@ -137,14 +132,13 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   {
    "group": 2,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "mean_anomaly",
     "mean_longitude",
@@ -167,14 +161,13 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   {
    "group": 3,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "mean_anomaly_hamann_800",
     "mean_anomaly_hamann_850",
@@ -197,14 +190,13 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   {
    "group": 4,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "a_R_s",
     "peri_AU",
@@ -227,14 +219,13 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   {
    "group": 5,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "Tp",
     "x",
@@ -257,14 +248,13 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   {
    "group": 6,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "b_occ",
     "p_trans",
@@ -287,14 +277,13 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   {
    "group": 7,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "multiplicity",
     "P/Pin",
@@ -317,14 +306,13 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   {
    "group": 8,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "rho/rhoout",
     "i-iin",
@@ -347,14 +335,13 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   {
    "group": 9,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "eout/e",
     "omega-omegain",
@@ -377,14 +364,13 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   {
    "group": 10,
    "columns": [
-    "kmdc_index",
+    "kdc_index",
     "catalog",
     "completeness",
     "is_hidden_planet",
@@ -404,8 +390,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   }
  ],
@@ -423,8 +408,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "R_s": {
@@ -440,8 +424,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "c_1": {
@@ -457,8 +440,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "c_2": {
@@ -474,8 +456,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "R_p/R_s": {
@@ -491,8 +472,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "R_pJ": {
@@ -508,8 +488,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "R_pE": {
@@ -525,8 +504,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "M_pE": {
@@ -542,8 +520,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "rho_p": {
@@ -559,8 +536,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "rho_s": {
@@ -576,8 +552,7 @@
     "kg_g00_p006.parquet",
     "kg_g00_p007.parquet",
     "kg_g00_p008.parquet",
-    "kg_g00_p009.parquet",
-    "kg_g00_p010.parquet"
+    "kg_g00_p009.parquet"
    ]
   },
   "M_p/M_s": {
@@ -593,8 +568,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "M_pJ": {
@@ -610,8 +584,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "sqrt(e)_cos(omega)": {
@@ -627,8 +600,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "sqrt(e)_sin(omega)": {
@@ -644,8 +616,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "i": {
@@ -661,8 +632,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "Omega": {
@@ -678,8 +648,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "e": {
@@ -695,8 +664,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "omega": {
@@ -712,8 +680,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "true_anomaly": {
@@ -729,8 +696,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "eccentric_anomaly": {
@@ -746,8 +712,7 @@
     "kg_g01_p006.parquet",
     "kg_g01_p007.parquet",
     "kg_g01_p008.parquet",
-    "kg_g01_p009.parquet",
-    "kg_g01_p010.parquet"
+    "kg_g01_p009.parquet"
    ]
   },
   "mean_anomaly": {
@@ -763,8 +728,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "mean_longitude": {
@@ -780,8 +744,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "omega_rad": {
@@ -797,8 +760,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "falsetrueanomaly": {
@@ -814,8 +776,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "f": {
@@ -831,8 +792,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "eccentric_anomaly_hamann": {
@@ -848,8 +808,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "false_eccentric_anomaly": {
@@ -865,8 +824,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "mean_anomaly_hamann": {
@@ -882,8 +840,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "false_mean_anomaly": {
@@ -899,8 +856,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "mean_angular_motion": {
@@ -916,8 +872,7 @@
     "kg_g02_p006.parquet",
     "kg_g02_p007.parquet",
     "kg_g02_p008.parquet",
-    "kg_g02_p009.parquet",
-    "kg_g02_p010.parquet"
+    "kg_g02_p009.parquet"
    ]
   },
   "mean_anomaly_hamann_800": {
@@ -933,8 +888,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "mean_anomaly_hamann_850": {
@@ -950,8 +904,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "corrected_mean_anomaly_800": {
@@ -967,8 +920,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "eccentric_anomaly_hamann_800": {
@@ -984,8 +936,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "eccentric_anomaly_hamann_850": {
@@ -1001,8 +952,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "true_anomaly_hamann_800": {
@@ -1018,8 +968,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "true_anomaly_hamann_850": {
@@ -1035,8 +984,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "corrected_eccentric_anomaly_800": {
@@ -1052,8 +1000,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "corrected_true_anomaly_800": {
@@ -1069,8 +1016,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "a_AU": {
@@ -1086,8 +1032,7 @@
     "kg_g03_p006.parquet",
     "kg_g03_p007.parquet",
     "kg_g03_p008.parquet",
-    "kg_g03_p009.parquet",
-    "kg_g03_p010.parquet"
+    "kg_g03_p009.parquet"
    ]
   },
   "a_R_s": {
@@ -1103,8 +1048,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "peri_AU": {
@@ -1120,8 +1064,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "peri_R_s": {
@@ -1137,8 +1080,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "apo_AU": {
@@ -1154,8 +1096,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "apo_R_s": {
@@ -1171,8 +1112,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "d_AU": {
@@ -1188,8 +1128,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "d_R_s": {
@@ -1205,8 +1144,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "interior_mass_pJ": {
@@ -1222,8 +1160,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "mu": {
@@ -1239,8 +1176,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "q": {
@@ -1256,8 +1192,7 @@
     "kg_g04_p006.parquet",
     "kg_g04_p007.parquet",
     "kg_g04_p008.parquet",
-    "kg_g04_p009.parquet",
-    "kg_g04_p010.parquet"
+    "kg_g04_p009.parquet"
    ]
   },
   "Tp": {
@@ -1273,8 +1208,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "x": {
@@ -1290,8 +1224,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "y": {
@@ -1307,8 +1240,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "z": {
@@ -1324,8 +1256,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "vx": {
@@ -1341,8 +1272,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "vy": {
@@ -1358,8 +1288,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "vz": {
@@ -1375,8 +1304,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "Period_days": {
@@ -1392,8 +1320,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "T_0": {
@@ -1409,8 +1336,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "b_trans": {
@@ -1426,8 +1352,7 @@
     "kg_g05_p006.parquet",
     "kg_g05_p007.parquet",
     "kg_g05_p008.parquet",
-    "kg_g05_p009.parquet",
-    "kg_g05_p010.parquet"
+    "kg_g05_p009.parquet"
    ]
   },
   "b_occ": {
@@ -1443,8 +1368,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "p_trans": {
@@ -1460,8 +1384,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "p_occ": {
@@ -1477,8 +1400,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "T_total_hr": {
@@ -1494,8 +1416,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "T_full_hr": {
@@ -1511,8 +1432,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "K_RV": {
@@ -1528,8 +1448,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "occurrence_rate_hsu": {
@@ -1545,8 +1464,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "E_or_hsu": {
@@ -1562,8 +1480,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "e_or_hsu": {
@@ -1579,8 +1496,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "hsu_flag": {
@@ -1596,8 +1512,7 @@
     "kg_g06_p006.parquet",
     "kg_g06_p007.parquet",
     "kg_g06_p008.parquet",
-    "kg_g06_p009.parquet",
-    "kg_g06_p010.parquet"
+    "kg_g06_p009.parquet"
    ]
   },
   "multiplicity": {
@@ -1613,8 +1528,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "P/Pin": {
@@ -1630,8 +1544,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "P/Pout": {
@@ -1647,8 +1560,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "Tdur/Tdurin": {
@@ -1664,8 +1576,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "Tdur/Tdurout": {
@@ -1681,8 +1592,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "R/Rin": {
@@ -1698,8 +1608,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "R/Rout": {
@@ -1715,8 +1624,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "M/Min": {
@@ -1732,8 +1640,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "M/Mout": {
@@ -1749,8 +1656,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "rho/rhoin": {
@@ -1766,8 +1672,7 @@
     "kg_g07_p006.parquet",
     "kg_g07_p007.parquet",
     "kg_g07_p008.parquet",
-    "kg_g07_p009.parquet",
-    "kg_g07_p010.parquet"
+    "kg_g07_p009.parquet"
    ]
   },
   "rho/rhoout": {
@@ -1783,8 +1688,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "i-iin": {
@@ -1800,8 +1704,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "iout-i": {
@@ -1817,8 +1720,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "xiin": {
@@ -1834,8 +1736,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "xiout": {
@@ -1851,8 +1752,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "distin_hillrad": {
@@ -1868,8 +1768,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "distout_hillrad": {
@@ -1885,8 +1784,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "distin_hillrad_e": {
@@ -1902,8 +1800,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "distout_hillrad_e": {
@@ -1919,8 +1816,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "e/ein": {
@@ -1936,8 +1832,7 @@
     "kg_g08_p006.parquet",
     "kg_g08_p007.parquet",
     "kg_g08_p008.parquet",
-    "kg_g08_p009.parquet",
-    "kg_g08_p010.parquet"
+    "kg_g08_p009.parquet"
    ]
   },
   "eout/e": {
@@ -1953,8 +1848,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "omega-omegain": {
@@ -1970,8 +1864,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "omegaout-omega": {
@@ -1987,8 +1880,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "dilute": {
@@ -2004,8 +1896,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "chisq": {
@@ -2021,8 +1912,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "Chain#": {
@@ -2038,8 +1928,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "chisq_rank": {
@@ -2055,8 +1944,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "step_number": {
@@ -2072,8 +1960,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "phodymm_index": {
@@ -2089,8 +1976,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "planet": {
@@ -2106,8 +1992,7 @@
     "kg_g09_p006.parquet",
     "kg_g09_p007.parquet",
     "kg_g09_p008.parquet",
-    "kg_g09_p009.parquet",
-    "kg_g09_p010.parquet"
+    "kg_g09_p009.parquet"
    ]
   },
   "completeness": {
@@ -2123,8 +2008,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "is_hidden_planet": {
@@ -2140,8 +2024,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "is_monotransiting": {
@@ -2157,8 +2040,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "phodymm_converged": {
@@ -2174,8 +2056,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "ecc_omega_convergence_failed": {
@@ -2191,8 +2072,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "KIC": {
@@ -2208,8 +2088,7 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
   "KOI": {
@@ -2225,11 +2104,10 @@
     "kg_g10_p006.parquet",
     "kg_g10_p007.parquet",
     "kg_g10_p008.parquet",
-    "kg_g10_p009.parquet",
-    "kg_g10_p010.parquet"
+    "kg_g10_p009.parquet"
    ]
   },
-  "kmdc_index": {
+  "kdc_index": {
    "group": "all",
    "type": "int64"
   },

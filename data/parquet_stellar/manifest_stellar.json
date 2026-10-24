@@ -1,11 +1,12 @@
 {
  "source_csvs": [
   "KMDC.csv",
+  "KMDC_leftovers.csv",
   "NCKMDC.csv",
   "KSDC.csv"
  ],
  "group_key": "KIC",
- "n_rows": 8207,
+ "n_rows": 8311,
  "file": "kg_stellar.parquet",
  "columns": {
   "KIC": "int32",
