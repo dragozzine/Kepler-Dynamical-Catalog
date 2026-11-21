@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Blodgett"
+  given-names: "Steven M."
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Ragozzine"
+  given-names: "Darin"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "Kepler Dynamical Catalog"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2026-12-18
+url: "https://github.com/dragozzine/Kepler-Dynamical-Catalog"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Blodgett"
+    given-names: "Steven M."
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Ragozzine"
+    given-names: "Darin"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  doi: "10.0000/00000"
+  journal: "Research Notes of the American Astronomical Society"
+  month: 1
+  start: 1 # First page number
+  end: 10 # Last page number
+  title: "Kepler Dynamical Catalog"
+  issue: 1
+  volume: 1
+  year: 2026

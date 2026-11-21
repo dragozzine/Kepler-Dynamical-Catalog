@@ -34,8 +34,3 @@ For a description of the post-processing done to multiplanet systems, as well as
 
 Any use of this data should also cite both Jones, Ragozzine, & Fabrykcy in preparation and Blodgett & Ragozzine in preparation. In addition, many columns of the KDC were taken from other studies which should also be cited; see ```doc/Provenance.md``` and ```doc/Sources.md``` for more details.
 
-
-
-## License
-
-Data in this repository are under a CC-BY-4.0 license.
